@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Home{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!-- <link rel="stylesheet" href="/../css/manage_post.css"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" -->
+    <!-- integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="/static/css/manage_post.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+</head>
+
+<body>
+    {% block content %}
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line icon icon-0 menu"></i>
+            <h2 style="padding:10px ;">Burger<span>Ex</span></h2>
+        </div>
+        <div class="search--notification--profile">
+            <div class="search">
+                <input type="text" placeholder="Search Scdule..">
+                <button><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+                <div class="picon lock">
+                    <i class="ri-lock-line"></i>
+                </div>
+                <div class="picon bell">
+                    <i class="ri-notification-2-line"></i>
+                </div>
+                <div class="picon chat">
+                    <i class="ri-wechat-2-line"></i>
+                </div>
+                <div class="picon profile">
+                    <img src="/static/upload/images/pic-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="nssn">
+        <div class="wrapper">
+            <div class="sidebar">
+                <h2>Admin Page</h2>
+                <ul>
+                    <li><a href="{{url_for('home_page')}}" target="_blank"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a target="_blank" href="{{url_for('manage_user')}}"><i class="fas fa-user"></i>Manage user</a>
+                    </li>
+                    <li><a target="_blank" href="{{url_for('manage_post')}}"><i class="fas fa-user"></i>Manage Posts</a>
+                    </li>
+                    <!-- <li><a href="{{url_for('manage_order')}}"><i class="fas fa-user"></i>Manage Order</a> -->
+                    </li>
+                    <li><a target="_blank" href="{{url_for('base_page')}}"><i class='fa fa-wpexplorer'></i> Burger
+                            Website</a></li>
+                    <li><a href="/../login/login/login.html">
+                            <iconify-icon icon="bx:log-out" width="29" height="20"></iconify-icon>
+                            LOG OUT
+                        </a></li>
+
+                </ul>
+                <!-- <div class="social_media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div> -->
+            </div>
+        </div>
+
+
+
+        <section class="main">
+            <div class="main--content">
+                <div class="overview">
+                    <div class="title">
+                        <h2 class="section--title" style="color:rgba(240, 248, 255, 0.644) ;">Overview</h2>
+
+                    </div>
+                    <div class="cards">
+                        <div class="card card-1">
+                            <div class="card--data">
+                                <div class="card--content">
+                                    <h5 class="card--title">Net Earnings</h5>
+                                    <h1>152</h1>
+                                </div>
+                                <iconify-icon inline icon="akar-icons:money" width="80" height="80"></iconify-icon>
+
+
+                            </div>
+                            <div class="card--stats">
+                                <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>65%</span>
+                                <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>10</span>
+                                <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>2</span>
+                            </div>
+                        </div>
+                        <div class="card card-2">
+                            <div class="card--data">
+                                <div class="card--content">
+                                    <h5 class="card--title">New Customer</h5>
+                                    <h1>1145</h1>
+                                </div>
+                                <i class="ri-user-line card--icon--lg"></i>
+                            </div>
+                            <div class="card--stats">
+                                <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>82%</span>
+                                <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>230</span>
+                                <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>45</span>
+                            </div>
+                        </div>
+                        <div class="card card-3">
+                            <div class="card--data">
+                                <div class="card--content">
+                                    <h5 class="card--title">order Delivered</h5>
+                                    <h1>102</h1>
+                                </div>
+                                <iconify-icon inline icon="cil:burger" width="80" height="80"></iconify-icon>
+
+                            </div>
+                            <div class="card--stats">
+                                <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>27%</span>
+                                <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>31</span>
+                                <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>23</span>
+                            </div>
+                        </div>
+                        <div class="card card-4">
+                            <div class="card--data">
+                                <div class="card--content">
+                                    <h5 class="card--title">order recivied</h5>
+                                    <h1>15</h1>
+                                </div>
+                                <iconify-icon inline icon="ic:twotone-done" width="80" height="80"></iconify-icon>
+
+                            </div>
+                            <div class="card--stats">
+                                <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>8%</span>
+                                <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>11</span>
+                                <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctors">
+                    <div class="title">
+                        <h2 class="section--title" style="color:rgba(250, 235, 215, 0.432) ;">common users</h2>
+                        <div class="doctors--right--btns">
+                            <!-- <select name="date" id="date" class="dropdown doctor--filter">
+                                <option>Filter</option>
+                                <option value="free">Free</option>
+                                <option value="scheduled">Scheduled</option>
+                            </select> -->
+                            <a href="/template/add and manage user/add and manage user.html" target="_blank"> <button
+                                    class="add"><i class="ri-add-line"></i>Add user</button></a>
+                        </div>
+                    </div>
+                    <div class="doctors--cards">
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/pic-1.png" alt="">
+                                </div>
+                            </div>
+                            <p class="free">Rori James</p>
+                        </a>
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/pic-2.png" alt="">
+                                </div>
+                            </div>
+                            <p class="scheduled">Robert </p>
+                        </a>
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/pic-3.png" alt="">
+                                </div>
+                            </div>
+                            <p class="scheduled">molia Michael</p>
+                        </a>
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/download1.jfif" alt="">
+                                </div>
+                            </div>
+                            <p class="free">Gena Richard</p>
+                        </a>
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/download2.jfif" alt="">
+                                </div>
+                            </div>
+                            <p class="scheduled">Russell</p>
+                        </a>
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/download3.jfif" alt="">
+                                </div>
+                            </div>
+                            <p class="free">Vincent</p>
+                        </a>
+                        <a href="#" class="doctor--card">
+                            <div class="img--box--cover">
+                                <div class="img--box">
+                                    <img src="/static/upload/images/5download.jfif" alt="">
+                                </div>
+                            </div>
+                            <p class="scheduled">Randy</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="recent--patients">
+                    <div class="title">
+                        <h2 class="section--title" style="color:rgba(240, 248, 255, 0.658) ;">Recent orders</h2>
+                        <a href="/template/add and manage posts/add and manage Post.html"> <button class="add"><i
+                                    class="ri-add-line"></i>Add new order</button></a>
+                    </div>
+                    <div class="table">
+
+                        <table class="table-latitude">
+                            <thead>
+
+                                <th>Product Name</th>
+                                <th>Amount</th>
+                                <th>total price</th>
+                                <th>address</th>
+                                <th>name of person</th>
+                                <th>ID</th>
+                                <th>status</th>
+                                <th>Edit</th>
+                                <th>remove</th>
+                            </thead>
+                            <!-- <tfoot>
+                                <tr>
+                                    <td colspan=8>Contact details for the Knowledge and Development Team</td>
+                                </tr>
+                            </tfoot> -->
+                            <tbody>
+                                <tr>
+                                    <th>Hamurger</th>
+                                    <th>1</th>
+                                    <td>29<span>$</span></td>
+                                    <td>fayoum</td>
+                                    <td>mohamed ahmed</td>
+                                    <td>1</td>
+                                    <td class="pending">pending</td>
+                                    <td> <a target="_blank"
+                                            href="/template/add and manage posts/add and manage Post.html"> <span><i
+                                                    class="ri-edit-line edit"></i> </a></td>
+                                    <td><a href="#" target="_blank"><i class="ri-delete-bin-line delete"></i></a></span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>cheese Hamurger</th>
+                                    <th>2</th>
+                                    <td>30<span>$</span></td>
+                                    <td>cairo</td>
+                                    <td> ahmed ali</td>
+                                    <td>2</td>
+
+                                    <td class="pending">pending</td>
+                                    <td> <a target="_blank"
+                                            href="/template/add and manage posts/add and manage Post.html"> <span><i
+                                                    class="ri-edit-line edit"></i> </a></td>
+                                    <td><a href="#" target="_blank"><i class="ri-delete-bin-line delete"></i></a></span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>Hamurger with potatos</th>
+                                    <th>4</th>
+                                    <td>100<span>$</span></td>
+                                    <td>giza</td>
+                                    <td>kareem ahmed</td>
+                                    <td>3</td>
+                                    <td class="confirmed">confirmed</td>
+
+                                    <td> <a target="_blank"
+                                            href="/template/add and manage posts/add and manage Post.html"> <span><i
+                                                    class="ri-edit-line edit"></i> </a></td>
+                                    <td> <a href="#" target="_blank"><i
+                                                class="ri-delete-bin-line delete"></i></a></span></td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>Hamurger and susi</th>
+                                    <th>1</th>
+                                    <td>25<span>$</span></td>
+                                    <td>tanta</td>
+                                    <td>said ali</td>
+                                    <td>4</td>
+                                    <td class="confirmed">confirmed</td>
+
+                                    <td> <a target="_blank"
+                                            href="/template/add and manage posts/add and manage Post.html"> <span><i
+                                                    class="ri-edit-line edit"></i> </a></td>
+                                    <td><a href="#" target="_blank"><i class="ri-delete-bin-line delete"></i></a></span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+        {% endblock %}
+</body>
+
+</html>

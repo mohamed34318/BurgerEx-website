@@ -1,0 +1,82 @@
+{% extends 'Home.html' %}
+
+{% block title %} manager posts {% endblock %}
+
+{% block content %}
+
+
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Admin Page</h2>
+    <ul>
+      <li><a href="{{url_for('home_page')}}" target="_blank"><i class="fas fa-home"></i>Home</a></li>
+      <li><a target="_blank" href="{{url_for('manage_user')}}"><i class="fas fa-user"></i>Manage user</a></li>
+      <li><a target="_blank" href="{{url_for('manage_post')}}"><i class="fas fa-user"></i>Manage Posts</a></li>
+      <!-- <li><a href="{{url_for('manage_order')}}"><i class="fas fa-user"></i>Manage Order</a> -->
+      </li>
+      <li><a target="_blank" href="{{url_for('base_page')}}"><i class='fa fa-wpexplorer'></i> Burger Website</a></li>
+      <li><a href="/../login/login/login.html"><iconify-icon icon="bx:log-out" width="29" height="20"></iconify-icon>
+          LOG OUT</a></li>
+    </ul>
+    <div class="social_media">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <h1 class="title-page" style="padding: 20px;
+  margin: 20px auto;">Manage Post</h1>
+    <a href="{{url_for('add_post')}}"> <button type="button" class="btn btn-primary">Add Post</button></a>
+
+    <!-- *********************************** -->
+    <table style="margin-left:15% ; width:80%;" class="table-latitude">
+      <thead>
+
+        <th>id</th>
+        <th>productname</th>
+        <th>price</th>
+        <th>stars</th>
+        <th>quantity</th>
+        <th>imagefile</th>
+        <th>update</th>
+        <th>remove</th>
+
+      </thead>
+      
+      <tbody method="POST">
+        {% for row in rows %}
+        <tr>
+          <td>{{row.id_product}}</td>
+          <!-- <th>{{row.id_product}}</th> -->
+          <th>{{row.productname}}</th>
+          <td>{{row.price}}</td>
+          <td>
+            <div class="stars">
+              {% for r2 in range(0 , row.stars) %}
+              <i class="fas fa-star"></i>
+              {% endfor %}
+           </div> 
+          </td>
+          <td>{{row.quantity}}</td>
+          <td>{{url_for('static', filename='upload/images/'+row.image_file)}}</td>
+          <td><a href="{{ url_for('update_post_page' ,id_product=row.id_product) }}"><button class="button">Update</button></a></td>
+          <td><a href="{{ url_for('remove_post_page' ,id_product=row.id_product) }}"><button class="button-danger">Remove</button></a></td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+
+    </table>
+
+
+
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+
+    {% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'Home.html' %}
+
+{% block title %} Manager user {% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Admin Page</h2>
+    <ul>
+      <li><a href="{{url_for('home_page')}}" target="_blank"><i class="fas fa-home"></i>Home</a></li>
+      <li><a target="_blank" href="{{url_for('manage_user')}}"><i class="fas fa-user"></i>Manage user</a></li>
+      <li><a target="_blank" href="{{url_for('manage_post')}}"><i class="fas fa-user"></i>Manage Posts</a></li>
+      <!-- <li><a href="{{url_for('manage_order')}}"><i class="fas fa-user"></i>Manage Order</a> -->
+      </li>
+      <li><a target="_blank" href="{{url_for('base_page')}}"><i class='fa fa-wpexplorer'></i> Burger Website</a></li>
+      <li><a href="/../login/login/login.html"><iconify-icon icon="bx:log-out" width="29" height="20"></iconify-icon>
+          LOG OUT</a></li>
+    </ul>
+    <!-- <div class="social_media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div> -->
+  </div>
+  <div class="main_content">
+    <div class="header">Welcome!! Have a nice day.</div>
+    <div class="info">
+      <div class="container">
+        <div class="row">
+          <a href="{{url_for('add_manage_user')}}"> <button type="button" class="btn btn-primary">Add User</button></a>
+          <h1 class="he23">Manage User</h1>
+          <table class="table-latitude">
+            <thead>
+
+              <th>ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Age</th>
+              <th>Email</th>
+              <th>address</th>
+              <th>password</th>
+              <th>Edit</th>
+              <th>remove</th>
+            </thead>
+            <tfoot>
+              <tr>
+                <td colspan=6>Contact details for the Knowledge and Development Team</td>
+              </tr>
+            </tfoot>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                <th>{{row.id}}</th>
+                <th>{{row.firstname}}</th>
+                <td>{{row.gender}}</td>
+                <td>{{row.age}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.address_user}}</td>
+                <td>{{row.password_user}}</td>
+                <td><a href="{{url_for('update_user_page' ,id=row.id)}}"><button class="button">Update</button></a></td>
+                <td><a href="{{url_for('remove_user_page' ,id=row.id)}}"><button class="button-danger">Remove</button></a></td>
+              </tr>
+                {% endfor %}
+            
+            </tbody>
+           
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+{% endblock %}

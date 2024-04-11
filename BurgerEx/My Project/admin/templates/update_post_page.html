@@ -1,0 +1,61 @@
+{% extends 'Home.html' %}
+
+{% block title %} update posts {% endblock %}
+
+{% block content %}
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>Admin Page</h2>
+      <ul>
+        <li><a href="{{url_for('home_page')}}" target="_blank"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a target="_blank" href="{{url_for('manage_user')}}"><i class="fas fa-user"></i>Manage user</a></li>
+                    <li><a target="_blank" href="{{url_for('manage_post')}}"><i class="fas fa-user"></i>Manage Posts</a></li>
+                    <!-- <li><a href="{{url_for('manage_order')}}"><i class="fas fa-user"></i>Manage Order</a> -->
+                    </li>
+                    <li><a target="_blank" href="{{url_for('base_page')}}"><i class='fa fa-wpexplorer'></i> Burger Website</a></li>
+                    <li><a href="/../login/login/login.html"><iconify-icon icon="bx:log-out" width="29" height="20"></iconify-icon>
+                        LOG OUT</a></li>
+    </div>
+    <!-- ***************************************** -->
+    <div class="main_content">
+      <div class="header">Add Post</div>
+      <div class="info">
+        <div class="container">
+          <div class="row">
+            <button style="margin-left: 10px;" type="button" class="btn btn-primary">Add Post</button>
+            <button style="margin-left: 10px;"  type="button" class="btn btn-secondary">Manage Post</button>
+            <h1 class="he23">Create Post</h1>
+            <!-- form -->
+            <form  method="POST" enctype="multipart/form-data">
+                <label for="id">id</label>
+                <input type="text" id="id" style="color:aliceblue ;" value="{{rows.id_product}}" disabled name="id_product" placeholder="id..">
+  
+              <label for="Pname"> Name of Product</label>
+              <input type="text" id="Pname" name="productname" value="{{rows.productname}}" placeholder="Name of Product..">
+
+              <label for="price">Price</label>
+              <input type="text" id="price" name="price"  value="{{rows.price}}" placeholder="Price..">
+
+              <label for="stars">Number of stars</label>
+              <input type="text" id="stars" name="stars"  value="{{rows.stars}}" placeholder="stars..">
+            
+              <label for="quantity">quantity</label>
+              <input type="text" id="quantity" name="quantity" value="{{rows.quantity}}"  placeholder="quantity..">
+
+              <label for="image_file">Upload Image</label>
+              <input type="file" name="imfile"  value="{{url_for('static', filename='upload/images/'+rows.image_file)}}">
+              <br>
+              <input type="submit" value="Save">
+            </form>
+
+
+            <!-- ****** -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+{% endblock %}

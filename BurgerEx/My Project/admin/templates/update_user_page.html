@@ -1,0 +1,73 @@
+{% extends 'Home.html' %}
+
+{% block title %} update user {% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Admin Page</h2>
+    <ul>
+      <li><a href="{{url_for('home_page')}}" target="_blank"><i class="fas fa-home"></i>Home</a></li>
+      <li><a target="_blank" href="{{url_for('manage_user')}}"><i class="fas fa-user"></i>Manage user</a></li>
+      <li><a target="_blank" href="{{url_for('manage_post')}}"><i class="fas fa-user"></i>Manage Posts</a></li>
+      <!-- <li><a href="{{url_for('manage_order')}}"><i class="fas fa-user"></i>Manage Order</a> -->
+      </li>
+      <li><a target="_blank" href="{{url_for('base_page')}}"><i class='fa fa-wpexplorer'></i> Burger Website</a></li>
+      <li><a href="/../login/login/login.html"><iconify-icon icon="bx:log-out" width="29" height="20"></iconify-icon>
+          LOG OUT</a></li>
+    </ul>
+    <!-- <div class="social_media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div> -->
+  </div>
+  <!-- ***************************************** -->
+  <div class="main_content">
+    <div class="header">Add User</div>
+    <div class="info">
+      <div class="container">
+        <div class="row">
+          <!-- <button type="button" class="btn btn-primary">Add Post</button> -->
+          <a href="/admin/add and manage user/Manage_users.html"> <button type="button" class="btn btn-secondary">Manage
+              Users</button></a>
+          <h1 class="he23">Create User</h1>
+          <!-- form -->
+          <form method="POST" >
+
+            <label for="id">ID</label>
+            <input type="text" id="id" style="color:white ;" name="id" value="{{row.id}}" disabled placeholder="firstname..">
+
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="firstname" value="{{row.firstname}}" placeholder="firstname..">
+
+            <label for="Gender">Gender</label>
+            <input type="text" id="Gender" name="gender" value="{{row.gender}}"  placeholder="Gender..">
+
+            <label for="age">age</label>
+            <input type="text" id="age" name="age" placeholder="age.." value="{{row.age}}">
+
+            <label for="Email">Email</label>
+            <input type="text" id="Email"  value="{{row.email}}" name="email" placeholder="Email..">
+
+            <label for="address_user">address_user</label>
+            <input type="text" id="address_user" name="address_user"  value="{{row.address_user}}"placeholder="Address..">
+
+            <label for="password_user">password_user</label>
+            <input type="text" id="password_user" name="password_user" value="{{row.password_user}}" placeholder="password..">
+            <br>
+            <input type="submit" value="Save">
+          </form>
+
+
+          <!-- ****** -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+  {% endblock %}

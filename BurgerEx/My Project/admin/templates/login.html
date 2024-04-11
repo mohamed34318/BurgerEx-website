@@ -1,0 +1,26 @@
+
+
+{% extends 'login_signup_base.html' %}
+
+{% block title %}login{% endblock %}
+
+{% block content %}
+
+
+  <div class="login-box">
+    <h1>Login</h1>
+    <form>
+      <label>Email</label>
+      <input type="email" placeholder=" email..." required />
+      <label>Password</label>
+      <input type="password" required placeholder="password..." />
+      <a href="{{url_for('base_page')}}"> <input type="button" value="Submit" /></a>
+    </form>
+  </div>
+  <p class="para-2 log-moa">
+    Not have an account? <a style="color:rgb(194, 124, 12) ; text-decoration:none;" href="{{url_for('registry_page_user')}}">Sign Up Here</a>
+  </p>
+
+
+
+  {% endblock %}

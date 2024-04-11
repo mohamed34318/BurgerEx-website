@@ -1,0 +1,127 @@
+{% extends 'base_page.html' %}
+{% block title %} menu {% endblock %}
+{% block content %}
+
+<div class="container">
+   <div class="row">
+      <div class="page1 mo">
+         <img src="/static/upload/images/byrger.png" alt="">
+      </div>
+      <div class="page2 mo">
+         <h2>Our Menu</h2>
+         <p class="text-page">wellcome in our website here you will find all orders food which you like it</p>
+         <!-- <h3>please Go Down and <span class="en">Enjoy</span></h3> -->
+      </div>
+   </div>
+</div>
+<!-- ************************************************ -->
+
+
+
+<section class="blogs" id="blogs">
+
+   <div class="heading">
+      <img src="/static/upload/images/title-img.png" alt="">
+      <h3>daily posts</h3>
+   </div>
+
+   <div class="box-container">
+
+      <div class="box" data-aos="fade-up" data-aos-delay="150">
+         <div class="image">
+            <img src="/static/upload/images/blog-1.jpg" alt="">
+            <div class="icons">
+               <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2022 </a>
+               <!-- <a href="#"> <i class="fas fa-user"></i> by admin </a> -->
+            </div>
+         </div>
+         <div class="content">
+            <h3>Normal Cheese Burger</h3>
+            <p>Dress your burger on the bun with the lettuce, sliced tomato and onion, mustard, barbecue sauce, and
+               ketchup as desired.</p>
+            <a href="{{url_for('menu_page')}}" class="btn">Read more</a>
+         </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="300">
+         <div class="image">
+            <img src="/static/upload/images/blog-2.jpg" alt="">
+            <div class="icons">
+               <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2022 </a>
+               <!-- <a href="#"> <i class="fas fa-user"></i> by admin </a> -->
+            </div>
+         </div>
+         <div class="content">
+            <h3>double kick hamburger</h3>
+            <p>Although the legendary Double Burger really needs no introduction, please allow us… Tucked in between
+               three soft buns are two all-beef patties, cheddar cheese, ketchup, onion, pickles and iceberg lettuce.
+            </p>
+            <a href="{{url_for('menu_page')}}" class="btn">Read more</a>
+         </div>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="450">
+         <div class="image">
+            <img src="/static/upload/images/blog-3.jpg" alt="">
+            <div class="icons">
+               <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2022 </a>
+               <!-- <a href="#"> <i class="fas fa-user"></i> by admin </a> -->
+            </div>
+         </div>
+         <div class="content">
+            <h3>special hamburger.</h3>
+            <p> A double layer of sear-sizzled, juicy 100% pure beef mingled with special sauce on a sesame seed bun
+               and topped with melty American cheese, crisp lettuce, minced onions, and crisp dill pickles.</p>
+            <a href="{{url_for('menu_page')}}" class="btn">Read more</a>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+
+
+<!-- --------------------------------- -->
+<div class="menu">
+   <div class="box-container">
+      {% for row in rows %}
+      <div class="box" data-aos="fade-up" data-aos-delay="150">
+         <img src="{{url_for('static', filename='upload/images/'+row.image_file)}}" alt="logo">
+         <div class="content">
+            <div class="stars">
+               {% for r2 in range(0 , row.stars) %}
+               <i class="fas fa-star"></i>
+               {% endfor %}
+            </div>
+            <h3>{{row.productname}}</h3>
+            <div class="price">${{row.price}}</div>
+            <a href="{{url_for('checkout_page', id_product=row.id_product)}}" class="btn">add to cart</a>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
+<!-- /**************************************************************** -->
+
+
+
+
+
+<!--******************************************************************  -->
+<section class="footer">
+
+   <div class="links">
+      <a href="#home" class="btn">home</a>
+      <a href="#menu" class="btn">menu</a>
+      <a href="#about" class="btn">about</a>
+      <a href="#reviews" class="btn">reviews</a>
+      <a href="#contact" class="btn">contact</a>
+      <a href="#blogs" class="btn">blogs</a>
+   </div>
+
+   <p class="credit"> created by <span>mr. web designer</span> | all rights reserved! </p>`
+</section>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'Home.html' %}
+
+{% block title %} update posts {% endblock %}
+
+{% block content %}
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>Admin Page</h2>
+      <ul>
+        <li><a href="{{url_for('home_page')}}" target="_blank"><i class="fas fa-home"></i>Home</a></li>
+        <li><a target="_blank" href="{{url_for('manage_user')}}"><i class="fas fa-user"></i>Manage user</a></li>
+        <li><a target="_blank" href="{{url_for('manage_post')}}"><i class="fas fa-user"></i>Manage Posts</a></li>
+        <!-- <li><a href="{{url_for('manage_order')}}"><i class="fas fa-user"></i>Manage Order</a> -->
+        </li>
+        <li><a target="_blank" href="{{url_for('base_page')}}"><i class='fa fa-wpexplorer'></i> Burger Website</a></li>
+        <li><a href="/../login/login/login.html"><iconify-icon icon="bx:log-out" width="29" height="20"></iconify-icon>
+            LOG OUT</a></li>
+    </div>
+    <!-- ***************************************** -->
+    <div class="main_content">
+      <div class="header">Add Post</div>
+      <div class="info">
+        <div class="container">
+          <div class="row">
+            <button style="margin-left: 10px;" type="button" class="btn btn-primary">Add Post</button>
+            <button style="margin-left: 10px;"  type="button" class="btn btn-secondary">Manage Post</button>
+            <h1 class="he23">Create Post</h1>
+            <!-- form -->
+            <form  method="POST" enctype="multipart/form-data">
+               
+              <label for="id">id</label>
+              <input type="text" id="id" disabled style="color: white;" name="id_product"  value="{{rows.id_product}}" placeholder="id..">
+
+              <label for="Pname"> Name of Product</label>
+              <input type="text" id="Pname" name="productname" value="{{rows.productname}}" placeholder="Name of Product..">
+
+              <label for="quantity">quantity</label>
+              <input type="text" id="quantity" name="quantity"  value="3" placeholder="quantity..">
+
+              <label for="total price">total price</label>
+              <input type="text" id="total price" name="totalprice"  value="192" placeholder="totalprice..">
+
+              <label for="address">address</label>
+              <input type="text" id="address" name="address_user"  value="{{rows.address_user}}" placeholder="address_user..">
+              
+              <label for="firstname">name of person</label>
+              <input type="text" id="firstname" name="firstname"  value="{{rows.firstname}}" placeholder="firstname..">
+              
+              <label for="status">status</label>
+              <input type="text" id="status" name="status"  value="pending"  placeholder="status..">
+              <br>
+              <input type="submit" value="Save">
+            </form>
+
+
+            <!-- ****** -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+{% endblock %}
